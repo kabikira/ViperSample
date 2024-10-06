@@ -30,17 +30,16 @@ final class ItemsPresenter {
 }
 
 extension ItemsPresenter: ItemsPresentation {
-  func viewDidLoad() {
-    interactor.getAuthenticatedUserItems {[weak self] result in
-      switch result {
-        case .success(let items):
-          self?.view?.configure(items: items)
-        case .failure(let error):
-          self?.view?.show(error: error)
-        break
-      }
+    func viewDidLoad() {
+        interactor.getAuthenticatedUserItems { [weak self] result in
+            switch result {
+            case .success(let items):
+                self?.view?.configure(items: items)
+            case .failure(let error):
+                self?.view?.show(error: error)
+            }
+        }
     }
-  }
 
   func selectCell(item: QiitaItemEntity) {
     guard let url = item.url else {

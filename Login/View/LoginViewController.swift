@@ -22,10 +22,11 @@ final class LoginViewController: UIViewController {
       }
 
       static func makeFromStoryboard() -> LoginViewController {
-        guard let vc = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as? LoginViewController else {
+        guard let viewController = UIStoryboard(name: "Login", bundle: nil)
+            .instantiateInitialViewController() as? LoginViewController else {
           fatalError()
         }
-        return vc
+        return viewController
       }
 
       override func viewDidLoad() {
@@ -37,7 +38,6 @@ final class LoginViewController: UIViewController {
     extension LoginViewController: LoginView {
 
     }
-
 
     private extension LoginViewController {
       @objc func tapOAuthButton(_ sender: UIButton) {

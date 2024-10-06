@@ -26,7 +26,6 @@
 		3B0141F92CB284EA006D7FA0 /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0141F82CB284EA006D7FA0 /* ItemsPresenter.swift */; };
 		3B45DAED2C96F1870026A268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45DAEC2C96F1870026A268 /* AppDelegate.swift */; };
 		3B45DAEF2C96F1870026A268 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45DAEE2C96F1870026A268 /* SceneDelegate.swift */; };
-		3B45DAF12C96F1870026A268 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45DAF02C96F1870026A268 /* ViewController.swift */; };
 		3B45DAF62C96F1890026A268 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B45DAF52C96F1890026A268 /* Assets.xcassets */; };
 		3B45DAF92C96F1890026A268 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3B45DAF82C96F1890026A268 /* Base */; };
 		3B45DB042C96F1890026A268 /* ViperSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45DB032C96F1890026A268 /* ViperSampleTests.swift */; };
@@ -73,7 +72,6 @@
 		3B45DAE92C96F1870026A268 /* ViperSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViperSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B45DAEC2C96F1870026A268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B45DAEE2C96F1870026A268 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3B45DAF02C96F1870026A268 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3B45DAF52C96F1890026A268 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B45DAF82C96F1890026A268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B45DAFA2C96F1890026A268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				3B45DB1F2CAE1EBE0026A268 /* Utility */,
 				3B45DB1C2CAE1E970026A268 /* Entity */,
 				3B45DB212CAE1EDF0026A268 /* Application */,
-				3B45DAF02C96F1870026A268 /* ViewController.swift */,
 				3B45DAEE2C96F1870026A268 /* SceneDelegate.swift */,
 				3B45DAEC2C96F1870026A268 /* AppDelegate.swift */,
 				3B45DAF52C96F1890026A268 /* Assets.xcassets */,
@@ -314,6 +311,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3B2EFE172CB2FEA8002A5119 /* PBXTargetDependency */,
 			);
 			name = ViperSample;
 			packageProductDependencies = (
@@ -393,6 +391,7 @@
 			mainGroup = 3B45DAE02C96F1870026A268;
 			packageReferences = (
 				3B0141CB2CB1189D006D7FA0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3B2EFE152CB2FA9E002A5119 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 3B45DAEA2C96F1870026A268 /* Products */;
 			projectDirPath = "";
@@ -441,7 +440,6 @@
 				3B0141F32CB27975006D7FA0 /* ItemsInteractor.swift in Sources */,
 				3B0141E32CB17A9E006D7FA0 /* LoginPresenter.swift in Sources */,
 				3B45DB252CAE20E10026A268 /* UserDefaults+.swift in Sources */,
-				3B45DAF12C96F1870026A268 /* ViewController.swift in Sources */,
 				3B0141EB2CB17C61006D7FA0 /* LoginViewController.swift in Sources */,
 				3B0141F52CB2832E006D7FA0 /* ItemsRouter.swift in Sources */,
 				3B45DAED2C96F1870026A268 /* AppDelegate.swift in Sources */,
@@ -480,6 +478,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		3B2EFE172CB2FEA8002A5119 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 3B2EFE162CB2FEA8002A5119 /* SwiftLintBuildToolPlugin */;
+		};
 		3B45DB012C96F1890026A268 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3B45DAE82C96F1870026A268 /* ViperSample */;
@@ -807,6 +809,14 @@
 				minimumVersion = 5.9.1;
 			};
 		};
+		3B2EFE152CB2FA9E002A5119 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.57.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -814,6 +824,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B0141CB2CB1189D006D7FA0 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		3B2EFE162CB2FEA8002A5119 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B2EFE152CB2FA9E002A5119 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

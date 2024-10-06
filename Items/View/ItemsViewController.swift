@@ -34,12 +34,13 @@ final class ItemsViewController: UIViewController {
     private var items: [QiitaItemEntity] = []
 
     static func makeFromStoryboard() -> ItemsViewController {
-      guard let vc = UIStoryboard(name: "Items", bundle: nil).instantiateInitialViewController() as? ItemsViewController else {
+      guard let viewController = UIStoryboard(name: "Items", bundle: nil)
+        .instantiateInitialViewController() as? ItemsViewController else {
         fatalError()
       }
-      return vc
+      return viewController
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
@@ -65,7 +66,6 @@ extension ItemsViewController: ItemsView {
 
   }
 }
-
 
 extension ItemsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

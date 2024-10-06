@@ -38,9 +38,9 @@ final class LoginRouter {
 extension LoginRouter: LoginWireframe {
  public func showWeb(url: URL?) {
     guard
-      let _url = url,
-      UIApplication.shared.canOpenURL(_url)
+      let validURL = url,
+      UIApplication.shared.canOpenURL(validURL)
       else { return }
-    UIApplication.shared.open(_url, options: [:], completionHandler: nil)
+    UIApplication.shared.open(validURL, options: [:], completionHandler: nil)
   }
 }

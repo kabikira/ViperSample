@@ -5,7 +5,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var appPresenter: AppPresentation?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
 
         // UIWindowSceneを取得
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -38,7 +40,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             appPresenter?.openURL(url)
         }
     }
-
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // シーンが切断されたときの処理

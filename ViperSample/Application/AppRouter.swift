@@ -28,7 +28,6 @@ public static func assembleModules(window: UIWindow) -> AppPresentation {
   }
 }
 
-
 extension AppRouter: AppWireframe {
     public func showItemView() {
     let viewController = ItemsRouter.assembleModules()

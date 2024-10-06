@@ -52,9 +52,9 @@ extension AppPresenter: AppPresentation {
     }
     interactor.postAccessToken(code: code) {[weak self] (result) in
       switch result {
-      case .success(_):
+      case .success:
         self?.router.showItemView()
-      case .failure(_):
+      case .failure(let error):
         self?.router.showLoginView()
       }
     }
